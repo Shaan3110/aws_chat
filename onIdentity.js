@@ -43,8 +43,10 @@ const onIdentity = async(aws_id, body) => {
     else
     {
         let updatedchat={
+            ...user,
+            aws_id:{
             ...user.aws_id,
-            [body.id]:[aws_id]
+            [body.id]:[aws_id]}
         }
         let chat= await Chat.findByIdAndUpdate(body.id,{$set:updatedchat},{new:false});
     }
