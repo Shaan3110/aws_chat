@@ -3,16 +3,11 @@ const { Schema } = mongoose;
 
 const accountmodel = new Schema({
     aws_id:{
-        type:Array,
-        "uid":{
-            type:String
-        },
-        "aws":{
-            type:String
-        }
+        type:Object
     },
     uuid:{
         type:String,
+        unique:true
     }
 });
 
